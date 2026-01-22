@@ -13,7 +13,7 @@
 ただ、物的な部品を集める ことが面倒です。 そこで、ソフトウェアで似たような時計が作れないかと考えました。
 
 # 出来上がるモノ
-![https://github.com/crayoncrayon2003/cat-clock/cat-clock-image.gif](https://github.com/crayoncrayon2003/cat-clock/cat-clock-image.gif)
+![https://github.com/crayoncrayon2003/cat-clock/blob/main/cat-clock-image.gif](https://github.com/crayoncrayon2003/cat-clock/blob/main/cat-clock-image.gif)
 
 # アイデア
 Rolling ball clock は、物理現象を扱っている以外に、次の特徴があると考えました。
