@@ -1,0 +1,28 @@
+{
+  "name": "cat-clock-widget",
+  "version": "1.0.0",
+  "description": "Desktop Cat Clock Widget",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.example.catclock",
+    "win": {
+      "target": "portable",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "^26.4.0"
+  }
+}
