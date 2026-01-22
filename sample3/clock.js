@@ -108,7 +108,7 @@ function drawMinutes(time) {
 
 // ---------- 7. Hour & Animation Logic ----------
 let hourCount = null;
-let lastTotalMinutes = null; 
+let lastTotalMinutes = null;
 let throwingBall = false;
 let ballAnimProgress = 0;
 let ballStartPos = null;
@@ -123,7 +123,7 @@ function hourPoint(index) {
 function triggerHourAnimation(targetHour) {
   throwingBall = true;
   ballAnimProgress = 0;
-  ballStartPos = getPointFromMinute(0); 
+  ballStartPos = getPointFromMinute(0);
   ballTargetHour = targetHour;
   ballEndPos = hourPoint(targetHour);
 }
@@ -158,7 +158,7 @@ function drawHours(time) {
 
   // アニメーション
   if (throwingBall) {
-    ballAnimProgress += 0.03; 
+    ballAnimProgress += 0.03;
     if (ballAnimProgress >= 1.0) {
       throwingBall = false;
       ballAnimProgress = 1.0;

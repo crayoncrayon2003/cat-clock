@@ -22,7 +22,7 @@ function createWindow() {
     skipTaskbar: true,
     focusable: false, // キーボードイベントも透過させる
     // フルスクリーンにすることでタスクバーの制限を回避
-    fullscreen: true, 
+    fullscreen: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true
