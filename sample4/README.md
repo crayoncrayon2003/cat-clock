@@ -107,12 +107,12 @@ cd mobile/android
 ./gradlew clean
 ./gradlew assembleRelease
 
-jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore keystore.jks app/build/outputs/apk/release/app-release-unsigned.apk catclock
-> Enter Passphrase for keystore: testpass
+zipalign -v 4 app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/app-release-aligned.apk
 
-zipalign -v 4 app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/Cat-Clock.apk
+apksigner sign --ks keystore.jks --ks-key-alias catclock --out app/build/outputs/apk/release/Cat-Clock.apk app/build/outputs/apk/release/app-release-aligned.apk
+> Keystore password for signer #1: testpass
 
-ls -lh app/build/outputs/apk/release/Cat-Clock.apk
+apksigner verify --verbose app/build/outputs/apk/release/Cat-Clock.apk
 ```
 
 **Step 3: Install APK**
