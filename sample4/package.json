@@ -1,0 +1,19 @@
+{
+  "name": "cat-clock-multiplatform",
+  "version": "1.0.0",
+  "description": "Cat Clock Widget for all platforms",
+  "private": true,
+  "scripts": {
+    "sync": "node scripts/sync-shared.js",
+    "build:desktop:win": "npm run sync && cd desktop && npm run build:win",
+    "build:desktop:mac": "npm run sync && cd desktop && npm run build:mac",
+    "build:desktop:linux": "npm run sync && cd desktop && npm run build:linux",
+    "build:mobile:sync": "npm run sync && cd mobile && npx cap sync",
+    "build:mobile:ios": "npm run build:mobile:sync && cd mobile && npx cap open ios",
+    "build:mobile:android": "npm run build:mobile:sync && cd mobile && npx cap open android",
+    "start:desktop": "npm run sync && cd desktop && npm start"
+  },
+  "devDependencies": {
+    "fs-extra": "^11.1.1"
+  }
+}
