@@ -59,17 +59,21 @@ function getVirtualTime() {
 // ---------- 5. Geometry ----------
 function getKeyPoints() {
   const w = canvas.width / (window.devicePixelRatio || 1);
-  const h = canvas.height / (window.devicePixelRatio || 1) - SAFE_BOTTOM;
+  const h = canvas.height / (window.devicePixelRatio || 1);
+
+  // モバイルの場合は画面下部まで、デスクトップは SAFE_BOTTOM を確保
+  const bottomY = PLATFORM.isMobile ? h : h - SAFE_BOTTOM;
+
   const cx = w / 2;
-  const cy = h / 2;
+  const cy = bottomY / 2;
 
   return [
     { min: 0,    x: cx, y: 0  },
     { min: 7.5,  x: w,  y: 0  },
     { min: 15,   x: w,  y: cy },
-    { min: 22.5, x: w,  y: h  },
-    { min: 30,   x: cx, y: h  },
-    { min: 37.5, x: 0,  y: h  },
+    { min: 22.5, x: w,  y: bottomY  },
+    { min: 30,   x: cx, y: bottomY  },
+    { min: 37.5, x: 0,  y: bottomY  },
     { min: 45,   x: 0,  y: cy },
     { min: 52.5, x: 0,  y: 0  },
     { min: 60,   x: cx, y: 0  }
