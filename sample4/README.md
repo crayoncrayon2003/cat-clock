@@ -111,6 +111,8 @@ jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore keystore.j
 > Enter Passphrase for keystore: testpass
 
 zipalign -v 4 app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/Cat-Clock.apk
+
+ls -lh app/build/outputs/apk/release/Cat-Clock.apk
 ```
 
 **Step 3: Install APK**
